@@ -20,7 +20,7 @@ pipeline {
                         $class: 'AmazonWebServicesCredentialsBinding',
                         accessKeyVariable: 'AKIATK6MJJCYYMADR2GU',
                         secretKeyVariable: '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',
-                        credentialsId: 'aws'
+                        credentialsId: 'AWS!'
                     ]]) {
                         // Initialize Terraform with AWS provider credentials
                         sh 'terraform init'
@@ -37,7 +37,7 @@ pipeline {
                         $class: 'AmazonWebServicesCredentialsBinding',
                         accessKeyVariable: 'AKIATK6MJJCYZ45HEUQS',
                         secretKeyVariable: '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',
-                        credentialsId: 'aws'
+                        credentialsId: 'AWS!'
                     ]]) {
                         // Run Terraform apply
                         sh 'terraform plan'
@@ -56,7 +56,7 @@ pipeline {
                         $class: 'AmazonWebServicesCredentialsBinding',
                         accessKeyVariable: 'AKIATK6MJJCYZ45HEUQS',
                         secretKeyVariable: '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',
-                        credentialsId: 'aws'
+                        credentialsId: 'AWS!'
                     ]]) {
                         // Destroy Terraform resources
                         sh 'terraform apply -auto-approve'
