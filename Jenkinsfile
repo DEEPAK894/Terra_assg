@@ -29,7 +29,7 @@ pipeline {
             }
         }
 
-        stage('Terraform Apply') {
+        stage('Terraform plan') {
             steps {
                 script {
                     // Use withCredentials to securely pass AWS credentials
@@ -40,7 +40,7 @@ pipeline {
                         credentialsId: 'aws'
                     ]]) {
                         // Run Terraform apply
-                        sh 'terraform apply -auto-approve'
+                        sh 'terraform plan'
                     }
                 }
             }
@@ -48,7 +48,7 @@ pipeline {
 
         // ... (other stages)
 
-        stage('Terraform Destroy') {
+        stage('Terraform apply') {
             steps {
                 script {
                     // Use withCredentials to securely pass AWS credentials
@@ -59,7 +59,7 @@ pipeline {
                         credentialsId: 'aws'
                     ]]) {
                         // Destroy Terraform resources
-                        sh 'terraform destroy -auto-approve'
+                        sh 'terraform apply -auto-approve'
                     }
                 }
             }
