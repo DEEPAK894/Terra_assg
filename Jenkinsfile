@@ -3,8 +3,6 @@ pipeline {
 
     environment {
         AWS_DEFAULT_REGION = 'us-east-1'
-       export AWS_ACCESS_KEY_ID     = credentials('AKIATK6MJJCY6E3DHHMN')
-       export AWS_SECRET_ACCESS_KEY = credentials('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')
     }
 
     stages {
@@ -39,7 +37,7 @@ pipeline {
                         $class: 'AmazonWebServicesCredentialsBinding',
                         accessKeyVariable: 'AKIATK6MJJCY6E3DHHMN',
                         secretKeyVariable: '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',
-                       credentialsId: 'AWS_New'
+                        credentialsId: 'AWS_New'
                     ]]) {
                         // Run Terraform apply
                         sh 'terraform plan'
@@ -58,7 +56,7 @@ pipeline {
                         $class: 'AmazonWebServicesCredentialsBinding',
                         accessKeyVariable: 'AKIATK6MJJCY6E3DHHMN',
                         secretKeyVariable: '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',
-                      credentialsId: 'AWS_New'
+                        credentialsId: 'AWS_New'
                     ]]) {
                         // Destroy Terraform resources
                         sh 'terraform apply -auto-approve'
