@@ -29,22 +29,22 @@ pipeline {
             }
         }
 
-        stage('Terraform plan') {
-            steps {
-                script {
+    // stage('Terraform plan') {
+      //      steps {
+       //         script {
                     // Use withCredentials to securely pass AWS credentials
-                    withCredentials([[
-                        $class: 'AmazonWebServicesCredentialsBinding',
-                        accessKeyVariable: 'AKIATK6MJJCY6E3DHHMN',
-                        secretKeyVariable: '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',
-                        credentialsId: 'AWS_New'
-                    ]]) {
-                        // Run Terraform apply
-                        sh 'terraform plan'
-                    }
-                }
-            }
-        }
+         //           withCredentials([[
+        //                $class: 'AmazonWebServicesCredentialsBinding',
+         //               accessKeyVariable: 'AKIATK6MJJCY6E3DHHMN',
+          //              secretKeyVariable: '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',
+                 //       credentialsId: 'AWS_New'
+                //    ]]) {
+                //        // Run Terraform apply
+               //         sh 'terraform plan'
+             //       }
+             //   }
+           // }
+       // }
 
         // ... (other stages)
 
