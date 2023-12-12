@@ -18,9 +18,9 @@ pipeline {
                     // Use withCredentials to securely pass AWS credentials
                     withCredentials([[
                         $class: 'AmazonWebServicesCredentialsBinding',
-                        accessKeyVariable: 'AKIATK6MJJCYYMADR2GU',
-                        secretKeyVariable: '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',
-                        credentialsId: 'AWS!'
+                        accessKeyVariable: 'AKIATK6MJJCY6E3DHHMN',
+                        secretKeyVariable: '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',
+                        //credentialsId: 'AWS!'
                     ]]) {
                         // Initialize Terraform with AWS provider credentials
                         sh 'terraform init'
@@ -35,9 +35,9 @@ pipeline {
                     // Use withCredentials to securely pass AWS credentials
                     withCredentials([[
                         $class: 'AmazonWebServicesCredentialsBinding',
-                        accessKeyVariable: 'AKIATK6MJJCYZ45HEUQS',
-                        secretKeyVariable: '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',
-                        credentialsId: 'AWS!'
+                        accessKeyVariable: 'AKIATK6MJJCY6E3DHHMN',
+                        secretKeyVariable: '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',
+                       // credentialsId: 'AWS!'
                     ]]) {
                         // Run Terraform apply
                         sh 'terraform plan'
@@ -54,9 +54,9 @@ pipeline {
                     // Use withCredentials to securely pass AWS credentials
                     withCredentials([[
                         $class: 'AmazonWebServicesCredentialsBinding',
-                        accessKeyVariable: 'AKIATK6MJJCYZ45HEUQS',
-                        secretKeyVariable: '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',
-                        credentialsId: 'AWS!'
+                        accessKeyVariable: 'AKIATK6MJJCY6E3DHHMN',
+                        secretKeyVariable: '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',
+                       // credentialsId: 'AWS!'
                     ]]) {
                         // Destroy Terraform resources
                         sh 'terraform apply -auto-approve'
